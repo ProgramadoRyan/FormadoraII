@@ -1,0 +1,37 @@
+<ion-content class="body">
+  <div class="card" [class.card-active]="cardActive">
+    <div class="card-back">
+      <div class="back-wave"></div>
+      <div class="back-wave-top"></div>
+      <div class="back-wave-middle"></div>
+
+      <div class="terms-title">Sobre mim:</div>
+
+      <ion-icon name="home-outline"></ion-icon>
+
+      <ion-icon routerLink="/card" class="ionIconTwo" name="sync-outline"></ion-icon>
+
+      <div class="terms-content">
+        Olá! Meu nome é Ryan, tenho 24 anos e sou um estudante de tecnologia e programação.
+        <br><br>
+        Aqui você pode entrar em contato ou me conhecer melhor através das minhas redes sociais.
+      </div>
+
+      <div class="dates">
+        <button class="date-item" (click)="gerarQRCodeInstagram()">
+          {{ instagramBtnText }}
+        </button>
+        <button class="date-item" (click)="gerarQRCodeGithub()">
+          {{ githubBtnText }}
+        </button>
+      </div>
+
+      <div class="contact-info">
+        <div class="qr-box" *ngIf="cardActive">
+          <img [src]="qrCodeImg" alt="QR Code">
+        </div>
+      </div>
+    </div>
+    <div class="company-url">www.FormadoraII.com</div>
+  </div>
+</ion-content>
